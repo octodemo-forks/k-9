@@ -42,13 +42,10 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         queries: security-and-quality
+        debug: true
 
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'zulu'
-        java-version: 17
-    - uses: gradle/gradle-build-action@v2
-    - run: ./gradlew assembleDebug ktlintCheck testsOnCi
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
