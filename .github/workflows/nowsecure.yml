@@ -24,7 +24,7 @@ jobs:
         uses: nowsecure/nowsecure-action@3b439db31b6dce857b09f5222fd13ffc3159ad26
         with:
           token: ${{ secrets.NS_TOKEN }}
-          app_file: app-debug.apk                 # Update this to a path to your .ipa or .apk
+          app_file: ./app/k9mail/build/outputs/apk/debug/k9mail-debug.apk
           group_id: 2f54e472-2487-45a4-81b0-ceeb71c548ac
 
       - name: Upload SARIF file
